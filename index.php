@@ -22,12 +22,14 @@ class USERS
     public $redid;
     public $name;
     public $url;
+    public $s ;
 }
 
 $newuser = new USERS();
 $newuser->name = $name;
 $newuser->url = $url;
 $newuser->redid = $id;
+$newuser->s = 1;
 
 // $fullusers = array($encdata, $newuser);
 // $fullusers = $encdata . $newuser;
@@ -41,6 +43,7 @@ $myfile = fopen("../merecado-qr/users.json", "w") or die("Unable to open file!")
 $txt = json_encode($encdata);
 fwrite($myfile, $txt);
 fclose($myfile);
+header("location:../merecado-users/");
 // echo system("../merecado-qr/upgit.bat");
 
 ?>
